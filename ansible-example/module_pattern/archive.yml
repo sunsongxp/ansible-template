@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+    - name: (archive) Creates a compressed archive of one or more files or trees.
+      archive:
+        path:
+          - /bin
+        exclude_path:
+          - /bin/cp
+        dest: ~/zipped_bin.tar.gz
+
+        # gz, bz2, zip
+        format: gz
+        remove: no
+
+        owner: root
+        group: root
+        mode: 0644

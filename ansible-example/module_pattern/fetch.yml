@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - name: Fetches a file from remote nodes
+      fetch:
+        src: ~/zipped_bin.tar.gz
+        # It will save to /tmp/hostname/path/to/zipped_bin.tar.gz
+        dest: /tmp/

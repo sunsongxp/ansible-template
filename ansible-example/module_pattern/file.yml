@@ -1,0 +1,25 @@
+---
+- hosts: all
+  tasks:
+    - name: Sets attributes of files
+      file:
+        path: /etc/file
+
+        # Options:
+        #   file: the path file will not be created if it does not exists.
+        #   link: create symbolic link
+        #   hard: create hard link
+        #   directory: if specified, and the path directory does not exists, then it will be created.
+        #   touch: path will be created if it does not exists, or update the path file.
+        #   absent
+        state: file
+
+        # yes only if state: directory specified.
+        recurse: no
+
+        # follow if path is a link.
+        follow: no
+
+        owner: root
+        group: root
+        mode: 0644
